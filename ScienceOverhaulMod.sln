@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScienceOverhaulMod", "ScienceOverhaulMod\ScienceOverhaulMod.csproj", "{8FCCA237-37E8-40DB-BC03-212304CB679E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScienceOverhaulMod", "ScienceOverhaulMod\ScienceOverhaulMod.csproj", "{FD370289-E7B3-4F49-BFBF-266CD7A8A4DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E415AB7-0DB7-40A4-9621-E1465B6A1CBC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +16,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8FCCA237-37E8-40DB-BC03-212304CB679E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FCCA237-37E8-40DB-BC03-212304CB679E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FCCA237-37E8-40DB-BC03-212304CB679E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FCCA237-37E8-40DB-BC03-212304CB679E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD370289-E7B3-4F49-BFBF-266CD7A8A4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD370289-E7B3-4F49-BFBF-266CD7A8A4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD370289-E7B3-4F49-BFBF-266CD7A8A4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD370289-E7B3-4F49-BFBF-266CD7A8A4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {50225DED-5E08-4716-9A04-04BA1370EF30}
+		SolutionGuid = {C9CBAF99-C397-48B7-9AC0-83792E844614}
 	EndGlobalSection
 EndGlobal

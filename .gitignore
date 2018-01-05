@@ -286,3 +286,9 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# Shortcuts
+#*.[Ii]nk
+
+# Debugging symbols?
+*.dll.mdb
