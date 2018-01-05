@@ -41,29 +41,18 @@ namespace ScienceOverhaulMod
             UnityEngine.Debug.Log("[ScienceOverhaulMod] This is what Unity logs look like");
 
             Log(getMonoVersion());
-            
+
             // We need to stay active, because KSP will be calling into our methods.
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(transform.gameObject);
 
-            test1();
-            test2();
-
             // Apply our patches before the game gets a chance to execute anything important.
             HarmonyInstance patcher = HarmonyInstance.Create("com.github.science.overhaul");
+
+            patcher.Patch(typeof(ResearchAndDevelopment).GetMethod("GetMiniBiomeTags", BindingFlags.Static | BindingFlags.Public), new HarmonyMethod(
+                typeof(Patches.RnDPatches.GetBiomeTagsPatch).GetMethod("Prefix", BindingFlags.Static | BindingFlags.Public)), null);
+
             patcher.PatchAll(Assembly.GetExecutingAssembly());
-
-            test1();
-            test2();
-        }
-
-        private void test1()
-        {
-            Log("test1");
-        }
-        private void test2()
-        {
-            Log("test2");
         }
 
         /// <summary>
@@ -85,23 +74,6 @@ namespace ScienceOverhaulMod
         private String getMonoVersion()
         {
             return Environment.Version.ToString();
-        }
-    }
-
-    namespace RnDPatchedMethods
-    {
-        [HarmonyPatch(typeof(ResearchAndDevelopment))]
-        [HarmonyPatch("SubmitScienceData")]
-        class SubmitScienceDataPatch
-        {
-            static bool Prefix(float dataAmount, ScienceSubject subject, ref float __result)
-            {
-                UnityEngine.Debug.Log(String.Format("[ScienceOverhaulMod] SubmitScienceData({0}, {1}) intercepted.", dataAmount, subject));
-                __result = 100;
-
-                // Don't execute the original method.
-                return false;
-            }
         }
     }
 }

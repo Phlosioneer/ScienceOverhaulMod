@@ -288,7 +288,7 @@ __pycache__/
 *.xsd.cs
 
 # Shortcuts
-#*.[Ii]nk
+*.[Ii]nk
 
 # Debugging symbols?
 *.dll.mdb

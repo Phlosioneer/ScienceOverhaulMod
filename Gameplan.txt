@@ -1,0 +1,56 @@
+
+Gameplan
+
+Milestone 1: Fixing the Labs
+1) Create a patch for every ResearchAndDevelopment method. 
+2) Subclass ResearchAndDevelopment.
+3) Try to refactor static methods to use the main Instance instead.
+	Store the instance twice: once in the ResearchAndDevelopment.Instance field,
+	and once in the subclass. The RnD instance field will either be null or have the instance,
+	as that's how KSP keeps track of whether science is enabled. Meanwhile, we'll actually always
+	have science enabled, so we don't have to repeat any logic in static methods.
+4) Do code cleanup, refactoring as needed to prepare for becoming modular.
+5) Change MobileProcessingLabs to be roughly equivalent to bringing stuff back to Kerbin.
+
+Milestone 2: Consolidating the Science Point System
+1) Separate the "vessel situations" from the "experiment situations", so that we can have more control.
+	This opens the door for all kinds of config-file-based science restructuring. Which means full Module
+	Manager support!
+2) Implement category-based experiment situations.
+	For example, all of space in all SOI's could count as the same "experiment" for the barometer.
+3) Allow experiment modules to generate multiple science-subject reports at once.
+	This will allow category-based experiment situations to overlap.
+4) Make sure all of this displays correctly in the Archives.
+
+Milestone 3: Prepare for alpha release
+1) Clean up Visual Studio files to work for other users.
+2) Comment code, and write documentation.
+3) Setup a wiki, start populating it with getting started guides.
+4) Make a contributing guide, detailing how PR's are handled, and probably set rules for maximum PR size.
+5) Set up bug reporting guides.
+6) Add a readme.
+
+Milestone 4: New Science Mechanics
+1) New tab in RnD, next to Archives: "Open Questions"
+	A contract-like system for managing science. At any given time, while there is a lot of science to gather,
+	some questions are more interesting than others. For example, after landing anywhere on the Mun, the next
+	"question" would be to get science from any crater. Then it might be a particular crater; then it might be
+	the canyons next to that crater.
+2) Maybe a more direct connection between the kind of science and how that science is spent? Getting the first
+	surface sample of the mun / the first seismic reading may incentivize going for resource scanners; or the
+	first landing on the mun may give a bonus towards researching better landing gear.
+
+	Writing this out, it's basically the "Boosting" system from Civilization V. Perhaps we can learn something
+	from how they implemented this.
+3) At the very least, at the end of this milestone, the system should be flexible enough that OTHER modders
+	can explore the interesting extensions like #1 and #2.
+
+
+
+
+
+Other stuff
+
+- Create an MIT liscence file.
+- Copy Harmony's liscence file into the GameData directory.
+- Set up the build process to copy resources (i.e. configs) into the GameData directory.
